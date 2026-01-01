@@ -336,3 +336,55 @@ WHERE NOT EXISTS (SELECT 1 FROM public.highlights LIMIT 1);
 INSERT INTO public.highlights (title, description, icon_name, color_class, bg_class, display_order)
 SELECT 'รางวัลครูดีเด่น', 'ระดับจังหวัด ปี 2567', 'Award', 'text-orange-600', 'bg-orange-100', 4
 WHERE NOT EXISTS (SELECT 1 FROM public.highlights LIMIT 1);
+
+-- 5.4 Stats (Sample Data)
+INSERT INTO public.stats (title, label, icon_name, color_class, display_order)
+SELECT 'ประสบการณ์สอน', '8 ปี', 'Clock', 'text-blue-500', 1
+WHERE NOT EXISTS (SELECT 1 FROM public.stats LIMIT 1);
+
+INSERT INTO public.stats (title, label, icon_name, color_class, display_order)
+SELECT 'นักเรียนที่ปรึกษา', '40+', 'Users', 'text-green-500', 2
+WHERE NOT EXISTS (SELECT 1 FROM public.stats LIMIT 1);
+
+INSERT INTO public.stats (title, label, icon_name, color_class, display_order)
+SELECT 'ชั่วโมงอบรม', '200+', 'BookOpen', 'text-purple-500', 3
+WHERE NOT EXISTS (SELECT 1 FROM public.stats LIMIT 1);
+
+-- 5.5 Works (Sample Data)
+INSERT INTO public.works (title, category, description, icon_name, color_class, is_featured, display_order, file_type)
+SELECT 'แผนการจัดการเรียนรู้ Active Learning', 'academic', 'แผนการสอนเน้นผู้เรียนเป็นสำคัญ วิชาภาษาไทย ระดับชั้น ม.1', 'BookOpen', 'bg-blue-100 text-blue-600', true, 1, 'document'
+WHERE NOT EXISTS (SELECT 1 FROM public.works LIMIT 1);
+
+INSERT INTO public.works (title, category, description, icon_name, color_class, is_featured, display_order, file_type)
+SELECT 'สื่อการสอนออนไลน์ Gen Z', 'technology', 'รวมคลิปวิดีโอประกอบการสอนที่นักเรียนสามารถเรียนรู้ได้ด้วยตนเอง', 'Video', 'bg-red-100 text-red-600', true, 2, 'video'
+WHERE NOT EXISTS (SELECT 1 FROM public.works LIMIT 1);
+
+INSERT INTO public.works (title, category, description, icon_name, color_class, is_featured, display_order, file_type)
+SELECT 'วิจัยในชั้นเรียนการแก้ปัญหาการอ่าน', 'research', 'การพัฒนาทักษะการอ่านจับใจความด้วยแบบฝึกทักษะ', 'FileText', 'bg-green-100 text-green-600', false, 3, 'document'
+WHERE NOT EXISTS (SELECT 1 FROM public.works LIMIT 1);
+
+-- 5.6 Activities (Sample Data)
+INSERT INTO public.activities (title, date_display, location, participants, description, image_emoji, color_gradient_class, display_order)
+SELECT 'กิจกรรมวันไหว้ครู 2567', '16 มิถุนายน 2567', 'หอประชุมโรงเรียน', 500, 'กิจกรรมรำลึกพระคุณบูรพาจารย์และมอบทุนการศึกษา', '🙏', 'from-orange-500 to-yellow-400', 1
+WHERE NOT EXISTS (SELECT 1 FROM public.activities LIMIT 1);
+
+INSERT INTO public.activities (title, date_display, location, participants, description, image_emoji, color_gradient_class, display_order)
+SELECT 'เข้าค่ายลูกเสือ-เนตรนารี', '20-22 สิงหาคม 2567', 'ค่ายลูกเสือวชิราวุธ', 120, 'กิจกรรมพัฒนาผู้เรียน เข้าค่ายพักแรมลูกเสือสามัญรุ่นใหญ่', '⛺', 'from-green-500 to-emerald-400', 2
+WHERE NOT EXISTS (SELECT 1 FROM public.activities LIMIT 1);
+
+INSERT INTO public.activities (title, date_display, location, participants, description, image_emoji, color_gradient_class, display_order)
+SELECT 'โครงการโรงเรียนสีขาว', 'ตลอดปีการศึกษา', 'โรงเรียน', 800, 'รณรงค์ต่อต้านยาเสพติดและอบายมุขในสถานศึกษา', '🤍', 'from-blue-500 to-cyan-400', 3
+WHERE NOT EXISTS (SELECT 1 FROM public.activities LIMIT 1);
+
+-- 5.7 Certificates (Sample Data)
+INSERT INTO public.certificates (title, issuer, year, type, icon_name, color_class, bg_class, display_order)
+SELECT 'ครูดีเด่นประจำปี 2567', 'สำนักงานเขตพื้นที่การศึกษา', '2567', 'award', 'Award', 'text-yellow-600', 'bg-yellow-100', 1
+WHERE NOT EXISTS (SELECT 1 FROM public.certificates LIMIT 1);
+
+INSERT INTO public.certificates (title, issuer, year, type, icon_name, color_class, bg_class, display_order)
+SELECT 'อบรมการจัดการเรียนรู้ Active Learning', 'Starfish Labz', '2567', 'training', 'Certificate', 'text-blue-600', 'bg-blue-100', 2
+WHERE NOT EXISTS (SELECT 1 FROM public.certificates LIMIT 1);
+
+INSERT INTO public.certificates (title, issuer, year, type, icon_name, color_class, bg_class, display_order)
+SELECT 'วิทยากรโครงการค่ายภาษาไทย', 'โรงเรียนบ้านหนองนา', '2566', 'guest_speaker', 'Mic', 'text-purple-600', 'bg-purple-100', 3
+WHERE NOT EXISTS (SELECT 1 FROM public.certificates LIMIT 1);
