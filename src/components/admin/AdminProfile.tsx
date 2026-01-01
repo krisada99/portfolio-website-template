@@ -11,13 +11,87 @@ import { SwalFire } from "@/utils/sweetalert";
 import { FileUploader } from "@/components/admin/FileUploader";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { HighlightsEditor } from "@/components/admin/HighlightsEditor";
 
 export function AdminProfile() {
     const [loading, setLoading] = useState(false);
-    // ... (rest of state initialization remains same, omitted for brevity)
+    const [profile, setProfile] = useState<Partial<Profile>>({
+        full_name: "",
+        position: "",
+        bio: "",
+        teaching_philosophy: "",
+        stats_years: "",
+        stats_students: "",
+        stats_awards: "",
+        image_url: "",
+        email: "",
+        phone: "",
+        address: "",
+        facebook: "",
+        facebook_url: "",
+        line_id: "",
+        line_url: "",
+        welcome_message_1: "",
+        welcome_message_2: "",
+        hero_badge_text: "",
+        about_short_description: "",
+        about_section_body: "",
+        works_description: "",
+        certificates_description: "",
+        activities_description: "",
+        pa_description: "",
+        pa_header_title: "",
+        pa_header_subtitle: "",
+        pa_badge_text: "",
+        google_map_url: "",
+        footer_text: "",
+    });
 
-    // ... (fetchProfile remains same)
+    useEffect(() => {
+        fetchProfile();
+    }, []);
+
+    const fetchProfile = async () => {
+        const { data, error } = await supabase
+            .from("profiles")
+            .select("*")
+            .limit(1)
+            .maybeSingle();
+
+        if (data) {
+            const profileData = data as Profile;
+            setProfile({
+                full_name: profileData.full_name || "",
+                position: data.position || "",
+                bio: data.bio || "",
+                teaching_philosophy: data.teaching_philosophy || "",
+                stats_years: data.stats_years || "",
+                stats_students: data.stats_students || "",
+                stats_awards: data.stats_awards || "",
+                image_url: data.image_url || "",
+                email: data.email || "",
+                phone: data.phone || "",
+                address: data.address || "",
+                facebook: data.facebook || "",
+                facebook_url: data.facebook_url || "",
+                line_id: data.line_id || "",
+                line_url: data.line_url || "",
+                welcome_message_1: data.welcome_message_1 || "",
+                welcome_message_2: data.welcome_message_2 || "",
+                hero_badge_text: data.hero_badge_text || "",
+                about_short_description: data.about_short_description || "",
+                about_section_body: data.about_section_body || "",
+                works_description: data.works_description || "",
+                certificates_description: data.certificates_description || "",
+                activities_description: data.activities_description || "",
+                pa_description: data.pa_description || "",
+                pa_header_title: data.pa_header_title || "",
+                pa_header_subtitle: data.pa_header_subtitle || "",
+                pa_badge_text: data.pa_badge_text || "",
+                google_map_url: data.google_map_url || "",
+                footer_text: data.footer_text || "",
+            });
+        }
+    };
 
     const handleSave = async () => {
         setLoading(true);

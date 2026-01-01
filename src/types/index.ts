@@ -16,6 +16,8 @@ export type Profile = Database["public"]["Tables"]["profiles"]["Row"] & {
     pa_badge_text?: string | null;
     facebook_url?: string | null;
     line_url?: string | null;
+    google_map_url?: string | null;
+    footer_text?: string | null;
 };
 export type Work = Database["public"]["Tables"]["works"]["Row"];
 export type Stat = Database["public"]["Tables"]["stats"]["Row"];
