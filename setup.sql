@@ -366,6 +366,27 @@ INSERT INTO public.works (title, category, description, icon_name, color_class, 
 SELECT 'วิจัยในชั้นเรียนการแก้ปัญหาการอ่าน', 'research', 'การพัฒนาทักษะการอ่านจับใจความด้วยแบบฝึกทักษะ', 'FileText', 'bg-green-100 text-green-600', false, 3, 'document'
 WHERE NOT EXISTS (SELECT 1 FROM public.works LIMIT 1);
 
+INSERT INTO public.works (title, category, description, icon_name, color_class, is_featured, display_order, file_type)
+SELECT 'รายงานการวิจัยในชั้นเรียน', 'research', 'การศึกษาผลสัมฤทธิ์ทางการเรียนวิชาภาษาไทย โดยใช้แบบฝึกทักษะ', 'FileText', 'bg-emerald-100 text-emerald-600', false, 4, 'document'
+WHERE NOT EXISTS (SELECT 1 FROM public.works WHERE title = 'รายงานการวิจัยในชั้นเรียน');
+
+INSERT INTO public.works (title, category, description, icon_name, color_class, is_featured, display_order, file_type)
+SELECT 'โครงงานสิ่งประดิษฐ์จากวัสดุเหลือใช้', 'academic', 'ที่ปรึกษาโครงงานวิทยาศาสตร์ระดับเขตพื้นที่การศึกษา', 'Lightbulb', 'bg-yellow-100 text-yellow-600', true, 5, 'document'
+WHERE NOT EXISTS (SELECT 1 FROM public.works WHERE title = 'โครงงานสิ่งประดิษฐ์จากวัสดุเหลือใช้');
+
+INSERT INTO public.works (title, category, description, icon_name, color_class, is_featured, display_order, file_type)
+SELECT 'บทความวิชาการ การเรียนรู้ยุค 2024', 'academic', 'ตีพิมพ์ในวารสารวิชาการครูไทย ปีที่ 15 ฉบับที่ 2', 'PenTool', 'bg-blue-100 text-blue-600', false, 6, 'link'
+WHERE NOT EXISTS (SELECT 1 FROM public.works WHERE title = 'บทความวิชาการ การเรียนรู้ยุค 2024');
+
+INSERT INTO public.works (title, category, description, icon_name, color_class, is_featured, display_order, file_type)
+SELECT 'สื่อมัลติมีเดียสอนกาพย์เห่เรือ', 'technology', 'บทเรียนคอมพิวเตอร์ช่วยสอน (CAI) ช่วยสอนวรรณคดี', 'MonitorPlay', 'bg-purple-100 text-purple-600', true, 7, 'video'
+WHERE NOT EXISTS (SELECT 1 FROM public.works WHERE title = 'สื่อมัลติมีเดียสอนกาพย์เห่เรือ');
+
+INSERT INTO public.works (title, category, description, icon_name, color_class, is_featured, display_order, file_type)
+SELECT 'เอกสารประกอบการสอนภาษาไทย', 'academic', 'เอกสารประกอบการสอน ระดับชั้นมัธยมศึกษาปีที่ 1', 'Book', 'bg-pink-100 text-pink-600', false, 8, 'document'
+WHERE NOT EXISTS (SELECT 1 FROM public.works WHERE title = 'เอกสารประกอบการสอนภาษาไทย');
+
+
 -- 5.6 Activities (Sample Data)
 INSERT INTO public.activities (title, date_display, location, participants, description, image_emoji, color_gradient_class, display_order)
 SELECT 'กิจกรรมวันไหว้ครู 2567', '16 มิถุนายน 2567', 'หอประชุมโรงเรียน', 500, 'กิจกรรมรำลึกพระคุณบูรพาจารย์และมอบทุนการศึกษา', '🙏', 'from-primary to-coral', 1
@@ -379,6 +400,27 @@ INSERT INTO public.activities (title, date_display, location, participants, desc
 SELECT 'โครงการโรงเรียนสีขาว', 'ตลอดปีการศึกษา', 'โรงเรียน', 800, 'รณรงค์ต่อต้านยาเสพติดและอบายมุขในสถานศึกษา', '🤍', 'from-lavender to-sky', 3
 WHERE NOT EXISTS (SELECT 1 FROM public.activities LIMIT 1);
 
+INSERT INTO public.activities (title, date_display, location, participants, description, image_emoji, color_gradient_class, display_order)
+SELECT 'กิจกรรมสัปดาห์วันวิทยาศาสตร์', '18 สิงหาคม 2567', 'ลานอเนกประสงค์', 1200, 'จัดนิทรรศการและการแข่งขันตอบปัญหาวิทยาศาสตร์', '🔬', 'from-blue-400 to-cyan-300', 4
+WHERE NOT EXISTS (SELECT 1 FROM public.activities WHERE title = 'กิจกรรมสัปดาห์วันวิทยาศาสตร์');
+
+INSERT INTO public.activities (title, date_display, location, participants, description, image_emoji, color_gradient_class, display_order)
+SELECT 'กีฬาภายใน "ราชพฤกษ์เกมส์"', '25-27 ธันวาคม 2567', 'สนามกีฬากลาง', 1500, 'ควบคุมดูแลขบวนพาเหรดและกองเชียร์คณะสีแดง', '🏃', 'from-red-400 to-orange-400', 5
+WHERE NOT EXISTS (SELECT 1 FROM public.activities WHERE title = 'กีฬาภายใน "ราชพฤกษ์เกมส์"');
+
+INSERT INTO public.activities (title, date_display, location, participants, description, image_emoji, color_gradient_class, display_order)
+SELECT 'ทัศนศึกษาแหล่งเรียนรู้', '15 พฤศจิกายน 2567', 'พิพิธภัณฑ์วิทย์ฯ', 300, 'พานักเรียนระดับชั้น ม.1 ทัศนศึกษาเปิดโลกทัศน์', '🚌', 'from-yellow-400 to-amber-400', 6
+WHERE NOT EXISTS (SELECT 1 FROM public.activities WHERE title = 'ทัศนศึกษาแหล่งเรียนรู้');
+
+INSERT INTO public.activities (title, date_display, location, participants, description, image_emoji, color_gradient_class, display_order)
+SELECT 'กิจกรรมพัฒนาผู้เรียน "ค่ายคุณธรรม"', '5-7 กรกฎาคม 2567', 'วัดป่าสุคะโต', 150, 'อบรมจริยธรรมและปฏิบัติธรรมสำหรับนักเรียน', '🙏', 'from-emerald-400 to-green-500', 7
+WHERE NOT EXISTS (SELECT 1 FROM public.activities WHERE title = 'กิจกรรมพัฒนาผู้เรียน "ค่ายคุณธรรม"');
+
+INSERT INTO public.activities (title, date_display, location, participants, description, image_emoji, color_gradient_class, display_order)
+SELECT 'เยี่ยมบ้านนักเรียน 100%', 'สิงหาคม 2567', 'บ้านนักเรียน', 40, 'ลงพื้นที่เยี่ยมบ้านนักเรียนเพื่อดูแลช่วยเหลือ', '🏠', 'from-indigo-400 to-purple-400', 8
+WHERE NOT EXISTS (SELECT 1 FROM public.activities WHERE title = 'เยี่ยมบ้านนักเรียน 100%');
+
+
 -- 5.7 Certificates (Sample Data)
 INSERT INTO public.certificates (title, issuer, year, type, icon_name, color_class, bg_class, display_order)
 SELECT 'ครูดีเด่นประจำปี 2567', 'สำนักงานเขตพื้นที่การศึกษา', '2567', 'award', 'Award', 'text-yellow-600', 'bg-yellow-100', 1
@@ -391,6 +433,27 @@ WHERE NOT EXISTS (SELECT 1 FROM public.certificates LIMIT 1);
 INSERT INTO public.certificates (title, issuer, year, type, icon_name, color_class, bg_class, display_order)
 SELECT 'วิทยากรโครงการค่ายภาษาไทย', 'โรงเรียนบ้านหนองนา', '2566', 'guest_speaker', 'Mic', 'text-purple-600', 'bg-purple-100', 3
 WHERE NOT EXISTS (SELECT 1 FROM public.certificates LIMIT 1);
+
+INSERT INTO public.certificates (title, issuer, year, type, icon_name, color_class, bg_class, display_order)
+SELECT 'ครูต้นแบบการสอนอิงสมรรถนะ', 'กระทรวงศึกษาธิการ', '2567', 'award', 'Award', 'text-yellow-600', 'bg-yellow-100', 4
+WHERE NOT EXISTS (SELECT 1 FROM public.certificates WHERE title = 'ครูต้นแบบการสอนอิงสมรรถนะ');
+
+INSERT INTO public.certificates (title, issuer, year, type, icon_name, color_class, bg_class, display_order)
+SELECT 'อบรมเชิงปฏิบัติการ Coding', 'สสวท.', '2567', 'training', 'Code', 'text-blue-600', 'bg-blue-100', 5
+WHERE NOT EXISTS (SELECT 1 FROM public.certificates WHERE title = 'อบรมเชิงปฏิบัติการ Coding');
+
+INSERT INTO public.certificates (title, issuer, year, type, icon_name, color_class, bg_class, display_order)
+SELECT 'นวัตกรรมการสอนเหรียญทอง', 'คุรุสภา', '2566', 'award', 'Medal', 'text-orange-600', 'bg-orange-100', 6
+WHERE NOT EXISTS (SELECT 1 FROM public.certificates WHERE title = 'นวัตกรรมการสอนเหรียญทอง');
+
+INSERT INTO public.certificates (title, issuer, year, type, icon_name, color_class, bg_class, display_order)
+SELECT 'วิทยากรสร้างสื่อการสอนด้วย AI', 'สพม.', '2567', 'guest_speaker', 'Mic', 'text-purple-600', 'bg-purple-100', 7
+WHERE NOT EXISTS (SELECT 1 FROM public.certificates WHERE title = 'วิทยากรสร้างสื่อการสอนด้วย AI');
+
+INSERT INTO public.certificates (title, issuer, year, type, icon_name, color_class, bg_class, display_order)
+SELECT 'ครูที่ปรึกษาโครงงานเหรียญทอง', 'ศิลปหัตถกรรมนักเรียน', '2566', 'award', 'Star', 'text-green-600', 'bg-green-100', 8
+WHERE NOT EXISTS (SELECT 1 FROM public.certificates WHERE title = 'ครูที่ปรึกษาโครงงานเหรียญทอง');
+
 
 -- 6. MIGRATION / FIXES (Auto-update existing data)
 
