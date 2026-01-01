@@ -98,10 +98,10 @@ export function WorksSection() {
             <span className="text-sm font-medium">ผลงานการสอน</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            ผลงาน<span className="text-gradient-primary">ของครูกฤษฎา</span>
+            ผลงาน<span className="text-gradient-primary">ของ{profile?.first_name ? `ครู${profile.first_name}` : "ครู"}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            {profile?.works_description || "รวบรวมสื่อการสอน แผนการจัดการเรียนรู้ และนวัตกรรมทางการศึกษาที่ครูกฤษฎาสร้างสรรค์ขึ้น ปีการศึกษา 2569"}
+            {profile?.works_description || `รวบรวมสื่อการสอน แผนการจัดการเรียนรู้ และนวัตกรรมทางการศึกษาที่${profile?.first_name ? `ครู${profile.first_name}` : "คุณครู"}สร้างสรรค์ขึ้น`}
           </p>
         </div>
 
